@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react";
 import { motion } from "framer-motion";
 import {
     AlertDialog,
@@ -72,12 +71,12 @@ function ImageButton({ text, image, altText, className }: ImageButtonProps) {
                     <img
                         src={image}
                         alt={altText}
-                        className="w-auto max-w-full sm:max-w-[350px] aspect-square object-contain rounded-lg shadow-sm"
+                        className="w-auto max-w-full sm:max-w-87.5 aspect-square object-contain rounded-lg shadow-sm"
                     />
                 </motion.div>
 
                 <AlertDialogFooter className="sm:justify-center">
-                    <AlertDialogAction className="bg-primary text-primary-foreground hover:opacity-90 min-w-[120px] rounded-lg">
+                    <AlertDialogAction className="bg-primary text-primary-foreground hover:opacity-90 min-w-30 rounded-lg">
                         Close
                     </AlertDialogAction>
                 </AlertDialogFooter>

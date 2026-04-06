@@ -1,5 +1,6 @@
 "use client"
 
+import type { Variants } from "framer-motion";
 import { motion } from 'framer-motion';
 import { Globe, Download, Share2 } from 'lucide-react';
 // Import Simple Icons for GitHub and LinkedIn
@@ -73,7 +74,7 @@ const buttonData = [
 ];
 
 export default function App() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -99,7 +100,7 @@ export default function App() {
             <PersonalBio />
           </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-16 items-start">
             <div className="lg:col-span-7">
               <About />
             </div>

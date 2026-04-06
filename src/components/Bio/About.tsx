@@ -1,6 +1,7 @@
 "use client"
 
-import { motion} from "framer-motion";
+import type { Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface AboutProps {
@@ -9,7 +10,7 @@ interface AboutProps {
 
 function About({ className }: AboutProps) {
     // Animation variants matching your portfolio's staggered reveal
-    const textVariants = {
+    const textVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
             opacity: 1, 

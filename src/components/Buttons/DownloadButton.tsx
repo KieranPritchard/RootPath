@@ -1,6 +1,5 @@
 "use client"
 
-import React from "react";
 import { Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
