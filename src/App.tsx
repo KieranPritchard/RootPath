@@ -18,6 +18,7 @@ import Footer from './components/MainComponents/Footer';
 
 // Assets
 import CV from "/kieran_pritchard_cv.pdf"
+import ScanCode from "/qr_code.webp"
 
 /**
  * SimpleIcon Component: A helper to render Simple Icons as SVGs
@@ -71,7 +72,7 @@ const buttonData = [
     id: "share",
     type: "image",
     text: "Share with others",
-    image: "",
+    image: ScanCode,
     altText: "QR code to share portfolio",
     icon: <Share2 />
   }
