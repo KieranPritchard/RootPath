@@ -1,3 +1,7 @@
+"use client"
+
+import React from "react";
+import { motion } from "framer-motion";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -8,48 +12,72 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
-interface ImageDropDownButtonProps {
+interface ImageButtonProps {
     text: string;
     image: string;
     altText: string;
+    className?: string;
 }
 
-// Button which features a image drop down - Converted to Alert Dialog
-function ImageDropDownButton({ text, image, altText }: ImageDropDownButtonProps) {
+/**
+ * ImageButton: An interactive button using shadcn/ui variants to match the Portfolio theme.
+ * Refined with smaller text and centered layout for visual consistency.
+ */
+function ImageButton({ text, image, altText, className }: ImageButtonProps) {
     return (
         <AlertDialog>
-            {/* Trigger button using your original styling */}
-            <AlertDialogTrigger asChild>
-                <div className="flex flex-col items-center justify-center bg-[#2a3c4b] dark:bg-[#a9d6e5] text-[#f9fafb] dark:text-[#0d1b2a] border-[#2a3c4b] dark:border-[#a9d6e5] hover:text-[#2a3c4b] dark:hover:text-[#a9d6e5] w-full rounded-xl border-2 text-lg my-2 hover:bg-transparent transition-all duration-300 ease-in-out px-4 cursor-pointer min-h-[70px] md:h-22">
-                    {/* uses text props */}
-                    <p className="text-body transition-all duration-300 ease-in-out text-lg md:text-xl text-center">
-                        {text}
-                    </p>
-                </div>
-            </AlertDialogTrigger>
+            <motion.div
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full"
+            >
+                <AlertDialogTrigger asChild>
+                    {/* Standardized Button with 'default' variant to match LinkButton */}
+                    <Button
+                        variant="default"
+                        size="lg"
+                        className={cn(
+                            "w-full rounded-xl px-6 flex items-center justify-center transition-all duration-300",
+                            "text-base md:text-lg font-medium shadow-sm hover:shadow-md cursor-pointer",
+                            className
+                        )}
+                    >
+                        <span className="text-center leading-tight tracking-tight">
+                            {text}
+                        </span>
+                    </Button>
+                </AlertDialogTrigger>
+            </motion.div>
 
-            <AlertDialogContent className="bg-[#f9fafb] dark:bg-[#1B2B41] border-none max-w-[90vw] sm:max-w-[450px]">
+            <AlertDialogContent className="bg-background border-muted max-w-[90vw] sm:max-w-md rounded-2xl shadow-2xl">
                 <AlertDialogHeader>
-                <AlertDialogTitle className="text-[#1B2B41] dark:text-[#f9fafb] text-center">
-                    {text}
-                </AlertDialogTitle>
+                    <AlertDialogTitle className="text-foreground text-center text-xl font-bold tracking-tight">
+                        {text}
+                    </AlertDialogTitle>
                     <AlertDialogDescription className="sr-only">
                         {altText}
                     </AlertDialogDescription>
                 </AlertDialogHeader>
 
-                {/* Image container inside the dialog */}
-                <div className="flex justify-center py-4">
-                <img
-                    src={image}
-                    alt={altText}
-                    className="w-auto max-w-full sm:max-w-[350px] aspect-square object-contain transition-all duration-300"
-                />
-                </div>
+                {/* Animated Image Reveal */}
+                <motion.div 
+                    className="flex justify-center py-6"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <img
+                        src={image}
+                        alt={altText}
+                        className="w-auto max-w-full sm:max-w-[350px] aspect-square object-contain rounded-lg shadow-sm"
+                    />
+                </motion.div>
 
-                <AlertDialogFooter>
-                    <AlertDialogAction className="bg-[#2a3c4b] dark:bg-[#a9d6e5] text-[#f9fafb] dark:text-[#0d1b2a] hover:opacity-90">
+                <AlertDialogFooter className="sm:justify-center">
+                    <AlertDialogAction className="bg-primary text-primary-foreground hover:opacity-90 min-w-[120px] rounded-lg">
                         Close
                     </AlertDialogAction>
                 </AlertDialogFooter>
@@ -58,4 +86,4 @@ function ImageDropDownButton({ text, image, altText }: ImageDropDownButtonProps)
     );
 }
 
-export default ImageDropDownButton;
+export default ImageButton;
