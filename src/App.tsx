@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Globe, Download, Share2 } from 'lucide-react';
 // Import Simple Icons for GitHub and LinkedIn
 import { siGithub} from 'simple-icons';
+import { FaLinkedin } from "react-icons/fa";
 
 // Component Imports
 import ContentBackground from './components/Background/ContentBackground';
@@ -14,6 +15,9 @@ import LinkButton from './components/Buttons/LinkButton';
 import DownloadButton from './components/Buttons/DownloadButton';
 import ImageButton from './components/Buttons/ImageButton';
 import Footer from './components/MainComponents/Footer';
+
+// Assets
+import CV from "/kieran_pritchard_cv.pdf"
 
 /**
  * SimpleIcon Component: A helper to render Simple Icons as SVGs
@@ -53,13 +57,13 @@ const buttonData = [
     text: "Connect on LinkedIn",
     link: "https://www.linkedin.com/in/kieran-pritchard/",
     // Integrated Simple Icon for LinkedIn
-    icon: <Globe />
+    icon: <FaLinkedin />
   },
   {
     id: "cv",
     type: "download",
     text: "Download My C.V",
-    file: "", // Ensure path is correct
+    file: CV, // Ensure path is correct
     fileName: "KieranPritchard-C.V.pdf",
     icon: <Download />
   },
@@ -148,7 +152,6 @@ export default function App() {
           </div>
         </motion.div>
       </ContentBackground>
-
       <Footer />
     </div>
   );

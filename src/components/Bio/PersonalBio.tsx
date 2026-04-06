@@ -25,7 +25,7 @@ function PersonalBio({ className }: PersonalBioProps) {
             >
                 <Avatar className="w-48 h-48 md:w-64 md:h-64 shadow-2xl border-4 border-background">
                     <AvatarImage 
-                        src="/kieran-pritchard.jpg" 
+                        src="kieran-pritchard.jpg" 
                         alt="Kieran Pritchard" 
                         className="object-cover transition-transform duration-500 hover:scale-110"
                     />
@@ -54,7 +54,7 @@ function PersonalBio({ className }: PersonalBioProps) {
                     />
                 </div>
 
-                <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight mt-6 text-muted-foreground'>
+                <h2 className='text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight mt-6 text-muted-foreground'>
                     T-Level Student
                 </h2>
             </motion.div>
