@@ -9,6 +9,7 @@ interface DownloadButtonProps {
     file: string;
     fileName: string;
     text: string;
+    icon?: React.ReactNode;
     className?: string;
 }
 

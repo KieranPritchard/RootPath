@@ -19,6 +19,7 @@ interface ImageButtonProps {
     image: string;
     altText: string;
     className?: string;
+    icon?: React.ReactNode;
 }
 
 /**

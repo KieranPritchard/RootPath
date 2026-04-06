@@ -11,7 +11,7 @@ interface PersonalBioProps {
 function PersonalBio({ className }: PersonalBioProps) {
     return (
         <div className={cn(
-            "flex flex-col justify-center items-center gap-8 lg:gap-12 lg:flex-row px-4 md:px-0 mb-10", 
+            "flex flex-col justify-center items-center gap-8 lg:gap-12 lg:flex-row px-4 md:px-0 mb-5", 
             // Removed overflow-hidden to prevent text clipping
             className
         )}>
