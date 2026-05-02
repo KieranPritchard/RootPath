@@ -9,7 +9,7 @@ interface AboutProps {
 }
 
 function About({ className }: AboutProps) {
-    // Animation variants matching your portfolio's staggered reveal
+    // Animation variants matching portfolio's staggered reveal
     const textVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
@@ -21,31 +21,37 @@ function About({ className }: AboutProps) {
 
     return (
         <motion.div 
-            /* Responsive Visibility: 
-                'hidden' hides the element by default (mobile).
-                'lg:flex' reveals it as a flex container at 1024px and up.
-            */
-            className={cn("hidden lg:flex flex-col gap-6", className)}
+            className={cn("hidden lg:flex flex-col gap-5", className)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
         >
-            {/* Section Title with Animated Divider */}
-            <motion.div className="space-y-2" variants={textVariants}>
-                <h3 className="scroll-m-20 text-3xl font-bold tracking-tight text-foreground">
-                    About Me
+            {/* Section Label — portfolio "- SECTION" pattern */}
+            <motion.div className="space-y-1" variants={textVariants}>
+                <div className="flex items-center gap-2.5">
+                    <div className="w-4 h-0.5 bg-primary rounded-full" />
+                    <span className="text-xs font-semibold uppercase tracking-[0.15em] text-primary">
+                        About Me
+                    </span>
+                </div>
+            </motion.div>
+
+            {/* Section Heading with Animated Divider */}
+            <motion.div className="space-y-3" variants={textVariants}>
+                <h3 className="scroll-m-20 text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight">
+                    Learning by breaking things.
                 </h3>
                 <motion.div 
                     className="h-1 bg-primary rounded-full" 
                     initial={{ width: 0 }}
-                    whileInView={{ width: 60 }}
+                    whileInView={{ width: 48 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                 />
             </motion.div>
             
             {/* Biography Content */}
             <motion.div 
-                className="space-y-4 text-lg leading-relaxed text-muted-foreground"
+                className="space-y-4 text-base leading-relaxed text-muted-foreground"
                 variants={textVariants}
             >
                 <p>
