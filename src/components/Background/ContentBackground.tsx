@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import React from "react";
 
+// Stores the types for the props
 interface ContentBackgroundProps {
     children: React.ReactNode;
 }

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 
+// Stores the types for the props
 interface FooterProps {
     className?: string;
 }
