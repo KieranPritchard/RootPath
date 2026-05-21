@@ -16,7 +16,7 @@
  */
 
 // Stores the main icons
-import { Globe, Download, Share2 } from "lucide-react";
+import { Globe, Download, Share2, UserCircle, Pen } from "lucide-react";
 import { siGithub } from "simple-icons";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -49,6 +49,20 @@ export type LinkItem =
 
 // Exports the links
 export const links: LinkItem[] = [
+  {
+    id: "portfolio",
+    type: "link",
+    text: "View My Portfolio",
+    link: "https://www.kpritchard.co.uk",
+    icon: <UserCircle />,
+  },
+  {
+    id: "blog",
+    type: "link",
+    text: "View My Blog",
+    link: "https://www.kpritchard.co.uk/blog",
+    icon: <Pen />,
+  },
   {
     id: "ctf",
     type: "link",
