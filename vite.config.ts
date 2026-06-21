@@ -6,7 +6,8 @@ import { defineConfig } from "vite"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/RootPath/',
+  // GitHub Pages serves from /RootPath/; Vercel serves from /
+  base: process.env.VERCEL ? '/' : '/RootPath/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
