@@ -67,7 +67,7 @@ export const links: LinkItem[] = [
     id: "ctf",
     type: "link",
     text: "CTF Write Ups",
-    link: "https://kieranpritchard.github.io/CTF-Showcase/#/",
+    link: "",
     icon: <Globe />,
   },
   {
