@@ -69,7 +69,7 @@ export default function App() {
               {/* Stores the links section */}
               <div className="lg:col-span-5 flex flex-col gap-5">
                   {/* Section Label — portfolio "- SECTION" pattern */}
-                  <div className="space-y-1 px-1">
+                  <div className="hidden md:block space-y-1 px-1">
                     {/* Links header */}
                     <div className="flex items-center gap-2.5">
                       <div className="w-4 h-0.5 bg-primary rounded-full" />
