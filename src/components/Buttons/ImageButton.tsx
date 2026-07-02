@@ -83,7 +83,7 @@ function ImageButton({ text, image, altText, icon, className }: ImageButtonProps
 
                     {/* Animated Image Reveal */}
                     <motion.div 
-                        className="flex justify-center py-4"
+                        className="flex justify-center py-4 w-full"
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3 }}
@@ -91,7 +91,7 @@ function ImageButton({ text, image, altText, icon, className }: ImageButtonProps
                         <img
                             src={image}
                             alt={altText}
-                            className="w-auto max-w-full sm:max-w-87.5 aspect-square object-contain rounded-xl shadow-sm"
+                            className="w-full max-w-70 sm:max-w-[320px] aspect-square object-contain rounded-xl shadow-sm"
                         />
                     </motion.div>
                     
