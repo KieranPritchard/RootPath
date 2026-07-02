@@ -22,7 +22,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 // Assets — import any files you need here
 import CV from "/kieran_pritchard_cv.pdf";
-import ScanCode from "/qr_code.webp";
+import ScanCode from "/qr_code.jpg";
 
 // Helper to render Simple Icons as inline SVGs
 const SimpleIcon = ({ icon }: { icon: { path: string } }) => (
