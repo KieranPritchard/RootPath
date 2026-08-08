@@ -43,13 +43,13 @@ export default function App() {
   return (
     <>
       {/* Swaps the content in a full lenght background */}
-      <div className='min-h-screen bg-background py-2 px-3 sm:px-6 lg:px-8 selection:bg-primary/20 selection:text-primary'>
+      <div className='h-dvh overflow-hidden bg-background py-2 px-3 sm:px-6 lg:px-8 selection:bg-primary/20 selection:text-primary flex items-center justify-center'>
         {/* Stores the background for all of the content */}
         <ContentBackground>
 
           {/* Container which will run the animations */}
           <motion.div 
-            className='max-w-7xl mx-auto w-full flex flex-col gap-10 py-10'
+            className='max-w-7xl mx-auto w-full flex flex-col gap-6'
             initial="hidden"
             animate="visible"
             variants={containerVariants}
@@ -60,14 +60,14 @@ export default function App() {
             </section>
 
             {/* Stores the bottom parr of the grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-14 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 items-start">
               {/* Stors the about section */}
               <div className="lg:col-span-7">
                 <About />
               </div>
 
               {/* Stores the links section */}
-              <div className="lg:col-span-5 flex flex-col gap-5">
+              <div className="lg:col-span-5 flex flex-col gap-3">
                   {/* Section Label — portfolio "- SECTION" pattern */}
                   <div className="hidden md:block space-y-1 px-1">
                     {/* Links header */}
@@ -79,8 +79,8 @@ export default function App() {
                     </div>
                   </div>
                   
-                  {/* Iterates over the linsk adn renders them */}
-                  <div className="flex flex-col gap-2.5 max-h-[60vh] lg:max-h-77 overflow-y-auto pr-2 pb-2 custom-scrollbar">
+                  {/* Iterates over the linsk adn renders them — capped to show ~4 buttons before scrolling */}
+                  <div className="flex flex-col gap-2 max-h-[248px] overflow-y-auto pr-2 pb-1 custom-scrollbar">
                     {links.map((item) => (
                       <motion.div key={item.id} variants={itemVariants}>
                         {item.type === "link" && (
@@ -108,8 +108,10 @@ export default function App() {
               </div>
             </div>
           </motion.div>
+
+          {/* Footer now lives inside ContentBackground, stacked naturally after the main content */}
+          <Footer />
         </ContentBackground>
-        <Footer />
       </div>
     </>
   );

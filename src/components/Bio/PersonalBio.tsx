@@ -13,7 +13,7 @@ function PersonalBio({ className }: PersonalBioProps) {
     return (
         <>
             <div className={cn(
-                "flex flex-col justify-center items-center gap-8 lg:gap-12 lg:flex-row px-4 md:px-0 mb-5", 
+                "flex flex-col justify-center items-center gap-4 lg:gap-8 lg:flex-row px-4 md:px-0 mb-3", 
                 className
             )}>
                 {/* Profile Image — circular with blue ring accent like portfolio */}
@@ -25,7 +25,7 @@ function PersonalBio({ className }: PersonalBioProps) {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     {/* Displays the image of me */}
-                    <Avatar className="w-48 h-48 md:w-64 md:h-64 shadow-2xl shadow-primary/10 border-4 border-primary/15 ring-2 ring-primary/5 ring-offset-2 ring-offset-card">
+                    <Avatar className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 shadow-2xl shadow-primary/10 border-4 border-primary/15 ring-2 ring-primary/5 ring-offset-2 ring-offset-card">
                         <AvatarImage 
                             src="kieran-pritchard.jpg" 
                             alt="Kieran Pritchard" 
@@ -43,19 +43,19 @@ function PersonalBio({ className }: PersonalBioProps) {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 >
-                    <div className="space-y-3">
-                        <h1 className='scroll-m-20 text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] wrap-break-word'>
+                    <div className="space-y-1.5">
+                        <h1 className='scroll-m-20 text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.1] wrap-break-word'>
                             Kieran Pritchard
                         </h1>
                         <motion.div 
-                            className="h-1.5 bg-primary rounded-full mx-0" 
+                            className="h-1 bg-primary rounded-full mx-0" 
                             initial={{ width: 0 }}
-                            whileInView={{ width: 80 }}
+                            whileInView={{ width: 60 }}
                             transition={{ delay: 0.6, duration: 1 }}
                         />
                     </div>
 
-                    <h2 className='text-lg md:text-xl lg:text-2xl font-medium tracking-tight mt-4 text-muted-foreground'>
+                    <h2 className='text-sm md:text-base lg:text-lg font-medium tracking-tight mt-2 text-muted-foreground'>
                         Ethical Hacker & Software Developer
                     </h2>
                 </motion.div>

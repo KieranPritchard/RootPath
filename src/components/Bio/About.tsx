@@ -25,7 +25,7 @@ function About({ className }: AboutProps) {
         <>
             {/* Animation container for the about section */}
             <motion.div 
-                className={cn("hidden lg:flex flex-col gap-5", className)}
+                className={cn("hidden lg:flex flex-col gap-3", className)}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
@@ -41,8 +41,8 @@ function About({ className }: AboutProps) {
                 </motion.div>
 
                 {/* Section Heading with Animated Divider */}
-                <motion.div className="space-y-3" variants={textVariants}>
-                    <h3 className="scroll-m-20 text-2xl md:text-3xl font-bold tracking-tight text-foreground leading-tight">
+                <motion.div className="space-y-2" variants={textVariants}>
+                    <h3 className="scroll-m-20 text-xl md:text-2xl font-bold tracking-tight text-foreground leading-tight">
                         Learning by breaking things.
                     </h3>
                     <motion.div 
@@ -55,17 +55,16 @@ function About({ className }: AboutProps) {
                 
                 {/* Biography Content */}
                 <motion.div 
-                    className="space-y-4 text-base leading-relaxed text-muted-foreground"
+                    className="space-y-2.5 text-sm leading-relaxed text-muted-foreground"
                     variants={textVariants}
                 >
                     <p>
-                        I am a <span className="text-foreground font-medium">T Level Software Development student</span> at BPC and an aspiring ethical hacker. 
-                        Driven by a hands-on approach to cybersecurity, I thrive on tackling technical challenges 
-                        and building security solutions through direct project experience.
+                        I'm a T Level Software Development student at Bournemouth & Poole College, currently working as 1st Line IT Support alongside it. 
+                        I build software and study how to break it — CTFs, self-hosted lab work, offensive security fundamentals — because writing code with a real sense of where it'd fail makes it better code.
                     </p>
                     <p>
-                        My focus lies in bridging the gap between robust software development and offensive security, 
-                        ensuring that the digital solutions of tomorrow are built with a "security-first" mindset.
+                        My focus splits two ways: full-stack development (Node.js, React, Next.js) and security tooling (Go, Python, Linux). 
+                        Most people specialise in one side of that split. I'm building fluency in both, on the idea that the two disciplines sharpen each other more than either one does alone.
                     </p>
                 </motion.div>
             </motion.div>
