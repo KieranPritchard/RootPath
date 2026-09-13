@@ -83,7 +83,7 @@ export const links: LinkItem[] = [
     id: "linkedin",
     type: "link",
     text: "Connect on LinkedIn",
-    link: "https://www.linkedin.com/in/kieran-pritchard/",
+    link: "https://www.linkedin.com/in/kieran-pritchard",
     icon: <FaLinkedin />,
   },
   {

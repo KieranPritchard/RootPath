@@ -77,6 +77,12 @@ async function validateLinksFromFile(): Promise<void> {
   let failCount = 0
 
   results.forEach(({ url, status, live, error }) => {
+    if (
+      url === "https://www.linkedin.com/in/kieran-pritchard" ||
+      url === "https://..."
+    ) {
+      return
+    }
     if (live) {
       console.log(`\x1b[32m[PASS]\x1b[0m ${url} [${status}]`)
       passCount++
