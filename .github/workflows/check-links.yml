@@ -1,0 +1,30 @@
+name: Link Validator
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  # Runs once a week automatically to catch broken links over time
+  schedule:
+    - cron: '0 9 * * 1'
+
+jobs:
+  validate-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run link checker
+        run: npm run check-links

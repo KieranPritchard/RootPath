@@ -10,7 +10,7 @@
  *    - icon:     JSX icon element (Lucide, SimpleIcons, etc.)
  *
  *  Type-specific fields:
- *    link:       { link: "https://..." }
+ *    link:       { link: "https://..."
  *    download:   { file: importedFile, fileName: "name.pdf" }
  *    image:      { image: importedImage, altText: "description" }
  */
@@ -19,12 +19,14 @@
 import { Globe, Download, Share2, UserCircle, Pen } from "lucide-react";
 import { siGithub } from "simple-icons";
 import { FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6"
 
 // Assets — import any files you need here
 import CV from "/kieran_pritchard_cv.pdf";
 import ScanCode from "/qr_code.png";
 
 // Helper to render Simple Icons as inline SVGs
+// eslint-disable-next-line react-refresh/only-export-components
 const SimpleIcon = ({ icon }: { icon: { path: string } }) => (
   <svg
     role="img"
@@ -41,7 +43,7 @@ const SimpleIcon = ({ icon }: { icon: { path: string } }) => (
 //  Edit this array to manage your links
 // ─────────────────────────────────────────────
 
-// Creats a custom type for the links items
+// Creates a custom type for the links items
 export type LinkItem =
   | { id: string; type: "link"; text: string; icon: React.ReactNode; link: string }
   | { id: string; type: "download"; text: string; icon: React.ReactNode; file: string; fileName: string }
@@ -85,6 +87,13 @@ export const links: LinkItem[] = [
     icon: <FaLinkedin />,
   },
   {
+    id: "x",
+    type: "link",
+    text: "Follow on X",
+    link: "https://x.com/Overf10w_0x",
+    icon: <FaXTwitter />,
+  },
+  {
     id: "cv",
     type: "download",
     text: "Download My C.V",
@@ -110,4 +119,4 @@ export const links: LinkItem[] = [
   //   link: "https://www.kpritchard.co.uk",
   //   icon: <Globe />,
   // },
-];
+]
