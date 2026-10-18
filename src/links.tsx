@@ -23,7 +23,7 @@ import { FaXTwitter } from "react-icons/fa6"
 
 // Assets — import any files you need here
 import CV from "/kieran_pritchard_cv.pdf";
-import ScanCode from "/qr_code.png";
+import ScanCode from "/qr-code.png";
 
 // Helper to render Simple Icons as inline SVGs
 // eslint-disable-next-line react-refresh/only-export-components
