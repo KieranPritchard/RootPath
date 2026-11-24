@@ -99,7 +99,7 @@ export default function App() {
                   </div>
                   
                   {/* Iterates over the links and renders them — capped to show ~4 buttons before scrolling */}
-                  <div className="flex flex-col gap-2 max-h-[248px] overflow-y-auto pr-2 pb-1 custom-scrollbar">
+                  <div className="flex flex-col gap-2 max-h-62 overflow-y-auto pr-2 pb-1 custom-scrollbar">
                     {linksError && (
                       <p className="rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
                         {linksError}
