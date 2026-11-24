@@ -5,13 +5,13 @@ import type { Variants } from "framer-motion";
 import { motion } from 'framer-motion';
 
 // Component Imports
-import ContentBackground from './components/Background/ContentBackground';
-import About from './components/Bio/About';
-import PersonalBio from './components/Bio/PersonalBio';
-import LinkButton from './components/Buttons/LinkButton';
-import DownloadButton from './components/Buttons/DownloadButton';
-import ImageButton from './components/Buttons/ImageButton';
-import Footer from './components/MainComponents/Footer';
+import Container from "./components/shared/Container";
+import Summary from './components/main/Summary';
+import Header from './components/main/Header';
+import LinkButton from './components/custom-ui/buttons/LinkButton';
+import DownloadButton from './components/custom-ui/buttons/DownloadButton';
+import ImageButton from './components/custom-ui/buttons/ImageButton';
+import Footer from './components/main/Footer';
 
 // Links config — edit src/links.tsx to add/remove/reorder links
 import { links } from './links';
@@ -45,7 +45,7 @@ export default function App() {
       {/* Swaps the content in a full lenght background */}
       <div className='h-dvh overflow-hidden bg-background py-2 px-3 sm:px-6 lg:px-8 selection:bg-primary/20 selection:text-primary flex items-center justify-center'>
         {/* Stores the background for all of the content */}
-        <ContentBackground>
+        <Container>
 
           {/* Container which will run the animations */}
           <motion.div 
@@ -56,14 +56,14 @@ export default function App() {
           >
             {/* Stores the personal bito section */}
             <section className="w-full">
-              <PersonalBio />
+              <Header />
             </section>
 
             {/* Stores the bottom parr of the grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 md:gap-8 items-start">
               {/* Stors the about section */}
               <div className="lg:col-span-7">
-                <About />
+                <Summary />
               </div>
 
               {/* Stores the links section */}
@@ -111,7 +111,7 @@ export default function App() {
 
           {/* Footer now lives inside ContentBackground, stacked naturally after the main content */}
           <Footer />
-        </ContentBackground>
+        </Container>
       </div>
     </>
   );

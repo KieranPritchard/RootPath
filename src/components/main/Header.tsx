@@ -5,11 +5,11 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 
 // Stores the types for the props
-interface PersonalBioProps {
+interface HeaderProps {
     className?: string;
 }
 
-function PersonalBio({ className }: PersonalBioProps) {
+function Header({ className }: HeaderProps) {
     return (
         <>
             <div className={cn(
@@ -64,4 +64,4 @@ function PersonalBio({ className }: PersonalBioProps) {
     );
 }
 
-export default PersonalBio;
+export default Header;

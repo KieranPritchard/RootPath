@@ -1,16 +1,15 @@
 "use client"
 
-
 import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 // Stores the types for the props
-interface AboutProps {
+interface SummaryProps {
     className?: string;
 }
 
-function About({ className }: AboutProps) {
+function Summary({ className }: SummaryProps) {
     // Animation variants matching portfolio's staggered reveal
     const textVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
@@ -72,4 +71,4 @@ function About({ className }: AboutProps) {
     );
 }
 
-export default About;
+export default Summary;
