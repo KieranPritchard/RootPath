@@ -1,5 +1,5 @@
 import { Globe, Download, Share2, UserCircle, Pen } from "lucide-react";
-import { siGithub } from "simple-icons";
+import { siCredly, siGithub } from "simple-icons";
 import { FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6"
 
@@ -9,7 +9,7 @@ import ScanCode from "/qr-code.png";
 
 // Types and Ultilities
 import type { LinkItem } from "@/features/links/types/link-item";
-import { SimpleIcon } from "@/lib/simple-icon";
+import { SimpleIcon } from "@/lib/simpleIcon";
 
 type LinkConfig =
   | { id: string; type: "link"; text: string; link: string; icon: string }
@@ -25,6 +25,7 @@ const iconComponents: Record<string, React.ReactNode> = {
   Github: <SimpleIcon icon={siGithub} />,
   Linkedin: <FaLinkedin />,
   X: <FaXTwitter />,
+  Credly: <SimpleIcon icon={siCredly} />
 };
 
 function publicUrl(path: string): string {

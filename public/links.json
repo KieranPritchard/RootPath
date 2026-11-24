@@ -35,6 +35,13 @@
     "icon": "Linkedin"
   },
   {
+    "id": "Credly",
+    "type": "link",
+    "text": "View My Credentials",
+    "link": "https://www.credly.com/users/kieran-pritchard.27bdf72a",
+    "icon": "Linkedin"
+  },
+  {
     "id": "x",
     "type": "link",
     "text": "Follow on X",
