@@ -27,7 +27,7 @@ function Header({ className }: HeaderProps) {
                     {/* Displays the image of me */}
                     <Avatar className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 shadow-2xl shadow-primary/10 border-4 border-primary/15 ring-2 ring-primary/5 ring-offset-2 ring-offset-card">
                         <AvatarImage 
-                            src="kieran-pritchard.jpg" 
+                            src={`${import.meta.env.BASE_URL}kieran-pritchard.jpg`}
                             alt="Kieran Pritchard" 
                             className="object-cover transition-transform duration-500 hover:scale-105"
                         />

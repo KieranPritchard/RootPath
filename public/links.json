@@ -1,0 +1,60 @@
+[
+  {
+    "id": "portfolio",
+    "type": "link",
+    "text": "View My Portfolio",
+    "link": "https://www.kpritchard.co.uk",
+    "icon": "UserCircle"
+  },
+  {
+    "id": "blog",
+    "type": "link",
+    "text": "View My Blog",
+    "link": "https://www.kpritchard.co.uk/blog",
+    "icon": "Pen"
+  },
+  {
+    "id": "ctf",
+    "type": "link",
+    "text": "CTF Write Ups",
+    "link": "https://writeups.kpritchard.co.uk/",
+    "icon": "Globe"
+  },
+  {
+    "id": "github",
+    "type": "link",
+    "text": "View My GitHub",
+    "link": "https://github.com/KieranPritchard",
+    "icon": "Github"
+  },
+  {
+    "id": "linkedin",
+    "type": "link",
+    "text": "Connect on LinkedIn",
+    "link": "https://www.linkedin.com/in/kieran-pritchard",
+    "icon": "Linkedin"
+  },
+  {
+    "id": "x",
+    "type": "link",
+    "text": "Follow on X",
+    "link": "https://x.com/Overf10w_0x",
+    "icon": "X"
+  },
+  {
+    "id": "cv",
+    "type": "download",
+    "text": "Download My C.V",
+    "file": "/kieran_pritchard_cv.pdf",
+    "fileName": "KieranPritchard-C.V.pdf",
+    "icon": "Download"
+  },
+  {
+    "id": "share",
+    "type": "image",
+    "text": "Share with others",
+    "image": "/qr-code.png",
+    "altText": "QR code to share portfolio",
+    "icon": "Share2"
+  }
+]

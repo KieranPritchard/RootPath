@@ -1,7 +1,12 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import fs from "node:fs"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
 import * as path from "node:path"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import process from "node:process"
 
 // Type to store the check result
 interface CheckResult {
@@ -51,7 +56,7 @@ async function checkUrl(url: string): Promise<CheckResult> {
 // Function to validate links from file
 async function validateLinksFromFile(): Promise<void> {
   // Stores the file path
-  const filePath:string = path.resolve(process.cwd(), "src/links.tsx")
+  const filePath:string = path.resolve(process.cwd(), "public/links.json")
 
   // Checks if the file exists
   if (!fs.existsSync(filePath)) {
@@ -59,18 +64,21 @@ async function validateLinksFromFile(): Promise<void> {
     process.exit(1)
   }
 
-  // Stores the file content
-  const fileContent = fs.readFileSync(filePath, "utf-8")
-
-  // Extract all http(s) URLs inside quotes
-  const urlRegex = /["'](https?:\/\/[^"']+)["']/g
-  const urls: string[] = []
-  let match: RegExpExecArray | null
-
-  // Adds each of the urls to it
-  while ((match = urlRegex.exec(fileContent)) !== null) {
-    urls.push(match[1])
+  let links: Array<{ type?: string; link?: string }> = []
+  try {
+    links = JSON.parse(fs.readFileSync(filePath, "utf-8"))
+  } catch (error: unknown) {
+    const errorMessage:string = error instanceof Error ? error.message : String(error)
+    console.error(`Error: Could not parse ${filePath}: ${errorMessage}`)
+    process.exit(1)
   }
+
+  // Extract web links from JSON link entries
+  const urls = links
+    .filter((item): item is { type: "link"; link: string } =>
+      item.type === "link" && typeof item.link === "string"
+    )
+    .map((item) => item.link)
 
   // Deduplicate URLs without spread operator
   const uniqueUrls = Array.from(new Set(urls))
@@ -82,7 +90,7 @@ async function validateLinksFromFile(): Promise<void> {
   }
 
   console.log(
-    `Found ${uniqueUrls.length} unique web links to validate in src/links.tsx...\n`
+    `Found ${uniqueUrls.length} unique web links to validate in public/links.json...\n`
   )
 
   // Stores the results

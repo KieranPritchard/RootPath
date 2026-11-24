@@ -1,22 +1,41 @@
-"use client"
+import { useEffect, useState } from "react";
 
 // Imports the animations library
 import type { Variants } from "framer-motion";
 import { motion } from 'framer-motion';
 
 // Component Imports
-import Container from "./components/shared/Container";
-import Summary from './components/main/Summary';
-import Header from './components/main/Header';
-import LinkButton from './components/custom-ui/buttons/LinkButton';
-import DownloadButton from './components/custom-ui/buttons/DownloadButton';
-import ImageButton from './components/custom-ui/buttons/ImageButton';
-import Footer from './components/main/Footer';
-
-// Links config — edit src/links.tsx to add/remove/reorder links
-import { links } from './links';
+import Container from "@/components/layout/Container";
+import Summary from "@/components/layout/Summary";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import LinkButton from "@/features/links/components/LinkButton";
+import DownloadButton from "@/features/links/components/DownloadButton";
+import ImageButton from "@/features/links/components/ImageButton";
+import { loadLinks } from "@/features/links/api/load-links";
+import type { LinkItem } from "@/features/links/types/link-item";
 
 export default function App() {
+  const [links, setLinks] = useState<LinkItem[]>([]);
+  const [linksError, setLinksError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    void loadLinks()
+      .then((loadedLinks) => {
+        if (active) setLinks(loadedLinks);
+      })
+      .catch((error: unknown) => {
+        if (!active) return;
+        const message = error instanceof Error ? error.message : "Could not load links.";
+        setLinksError(message);
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // Stores the animations for the containers
   const containerVariants: Variants = {
@@ -79,8 +98,13 @@ export default function App() {
                     </div>
                   </div>
                   
-                  {/* Iterates over the linsk adn renders them — capped to show ~4 buttons before scrolling */}
+                  {/* Iterates over the links and renders them — capped to show ~4 buttons before scrolling */}
                   <div className="flex flex-col gap-2 max-h-[248px] overflow-y-auto pr-2 pb-1 custom-scrollbar">
+                    {linksError && (
+                      <p className="rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
+                        {linksError}
+                      </p>
+                    )}
                     {links.map((item) => (
                       <motion.div key={item.id} variants={itemVariants}>
                         {item.type === "link" && (
